@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/beaconView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/beaconStatusLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="Beacon not found" />
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:scaleType="fitCenter"
+        android:layout_margin="20dp" />
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <HorizontalScrollView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/hScrollView"
+                android:scrollbars="none"
+                android:fillViewport="true">
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0" />
+            </HorizontalScrollView>
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0" />
+            <android.support.v4.view.ViewPager
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <android.support.v4.view.PagerTabStrip
+                    android:id="@+id/pager_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:paddingTop="4dp" />
+            </android.support.v4.view.ViewPager>
+        </LinearLayout>
+    </TabHost>
+</RelativeLayout>
